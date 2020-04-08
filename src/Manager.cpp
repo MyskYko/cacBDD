@@ -57,14 +57,14 @@ written by
 
 namespace cacBDD
 {
-	XManager::XManager(int variableCount)
+        XManager::XManager(int variableCount, int slotSize, int uSize, int cSize)
 	{
 		varCount = variableCount;
 		maxCacheSize = 2147483647;
-		nodes.Init(1 * ONE_MILLION);
+		nodes.Init(slotSize);
 
-		UTable = new XUTable(this, 18);
-		CTable = new XCTable(this, 18);
+		UTable = new XUTable(this, (int)log2(uSize));
+		CTable = new XCTable(this, (int)log2(cSize));
 
 		One = 0;
 		Zero = Not(One);

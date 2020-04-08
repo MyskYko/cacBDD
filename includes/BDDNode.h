@@ -94,8 +94,8 @@ namespace cacBDD
 		XManager *mgr;
 
 	public:
-		XBDDManager() { mgr = new XManager(int(1E4)); }
-		XBDDManager(int varCount) { mgr = new XManager(varCount); }
+	        XBDDManager() { mgr = new XManager(int(1E4), 1000000, 1 << 18, 1 << 18); }
+		XBDDManager(int varCount, int slotSize, int uSize, int cSize) { mgr = new XManager(varCount, slotSize, uSize, cSize); }
 		~XBDDManager() { delete mgr; }
 		void Clear(int varCnt) { mgr->Clear(varCnt); }
 
