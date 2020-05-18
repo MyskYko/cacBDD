@@ -57,7 +57,7 @@ written by
 
 namespace cacBDD
 {
-        XManager::XManager(int variableCount, int slotSize, int uSize, int cSize)
+        XManager::XManager(int variableCount, int slotSize, int uSize, int cSize, int nCallThold)
 	{
 		varCount = variableCount;
 		maxCacheSize = 2147483647;
@@ -76,7 +76,7 @@ namespace cacBDD
 		}
 
 		oldCHit = 0.0;
-		oldCallCount = 2000000;
+		oldCallCount = nCallThold;
 		curCallCount = 0;
 		adjustCTableType = CACHE_DYN;
 	}

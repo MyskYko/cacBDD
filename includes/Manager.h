@@ -122,7 +122,7 @@ namespace cacBDD
 		void GarbageCollection();
 
 	public:
-		XManager(int variableCount, int slotSize, int uSize, int cSize);
+	        XManager(int variableCount, int slotSize, int uSize, int cSize, int nCallThold);
 		~XManager();
 		void   Clear(int varCnt);
 		void   ShowInfo(double vtime);
